@@ -25,5 +25,10 @@ class P5server {
             this.data = Number(inString);
         }
     }
-    draw = func => func(this.data);
+
+    draw = func => {
+        const _data = this.data;
+        const data = _data.includes(".") ? _data.split(".") : _data;
+        func(data);
+    }
 }
